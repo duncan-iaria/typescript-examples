@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 // STYLES
-import './styles/reset.css'
+import './styles/reset.css';
 import './styles/App.css';
 
 // COMPONENTS

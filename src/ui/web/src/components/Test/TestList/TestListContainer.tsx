@@ -1,15 +1,15 @@
-// import { StoreState } from '../../../types';
+// import { StoreState } from '../../../types
 import { connect } from 'react-redux';
 
 // COMPONENTS
 import TestList from './TestList';
 
-//PROPS
+// PROPS
 export interface Props {
     enthusiasmLevel?: number;
 }
 
-export function mapStateToProps( {enthusiasmLevel} : Props ) {
+export function mapStateToProps( {enthusiasmLevel}: Props ) {
     return {
         enthusiasmLevel,
     };

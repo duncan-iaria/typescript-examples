@@ -12,19 +12,19 @@ import './TestList.style.css';
 import TestListItem from './TestListItem';
 
 // COMPONENT
-const TestList = ( {enthusiasmLevel} : Props ) => {
+const TestList = ( {enthusiasmLevel}: Props ) => {
     return (
         <div className="testlist__container">
-            { getListItems( enthusiasmLevel ) }
+            {getListItems( enthusiasmLevel )}
         </div>
     );
 };
 
 // HELPERS
 const getListItems = ( numItems: number ) => {
-    let tempItems: Array<any> = [];
-    for( let i: number = 0; i < numItems; i++ ){
-        tempItems.push( <TestListItem/> );
+    let tempItems: Array<{}> = [];
+    for ( let i: number = 0; i < numItems; i++ ) {
+        tempItems.push( <TestListItem key={i} id={i + 1}/> );
     }
 
     return tempItems;
