@@ -1,19 +1,13 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import { enthusiasm } from './reducers';
-import { StoreState } from './types';
-
-const store = createStore<StoreState>(enthusiasm, {
-  enthusiasmLevel: 1,
-  languageName: 'TypeScript',
-});
-
+import { configureStore } from './store';
 import App from './App';
 
 import registerServiceWorker from './registerServiceWorker';
 import './styles/index.css';
+
+const store = configureStore( {} );
 
 ReactDOM.render(
   <Provider store={store}>
