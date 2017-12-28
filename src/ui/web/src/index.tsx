@@ -13,7 +13,7 @@ const store = createStore<StoreState>(enthusiasm, {
 import App from './App';
 
 import registerServiceWorker from './registerServiceWorker';
-import './index.css';
+import './styles/index.css';
 
 ReactDOM.render(
   <Provider store={store}>

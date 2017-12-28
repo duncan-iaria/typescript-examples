@@ -1,5 +1,9 @@
 import * as React from 'react';
 
+// COMPONENTS
+import TestListContainer from './TestList/TestListContainer';
+
+// PROPS
 export interface Props {
     name: string;
     enthusiasmLevel?: number;
@@ -18,6 +22,7 @@ const Test = ( {name, enthusiasmLevel = 1, onIncrement, onDecrement}: Props ) =>
             <div className="greeting">test rendering: {name + getExclaimationMarks( enthusiasmLevel )} </div>
             <button onClick={onDecrement}>-</button>
             <button onClick={onIncrement}>+</button>
+            <TestListContainer/>
         </div>
     );
 };
