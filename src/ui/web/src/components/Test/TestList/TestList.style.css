@@ -1,17 +1,16 @@
-.testlist__container {
+.test-list__container {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     /* flex-direction: column; */
     margin: 10px;
     width: 100%;
 }
 
-.testlist__item {
-    
+.test-list__item {
     width: 200px;
     height: 100px;
     margin: 4px;
-    padding: 6px;
     
     cursor: pointer;
 
@@ -20,4 +19,34 @@
     box-shadow: 0px 1px 4px #DDD;
     
     background-color: white;
+    overflow: hidden;
+}
+
+.test-list__item-header {
+    display: flex;
+    /* justify-content: center; */
+    position: relative;
+    height: 26px;
+    border-bottom: 1px solid #DDE;
+}
+
+.test-list__id {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    width: 26px;
+    height: 26px;
+
+    background-color: coral;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.test-list__title {
+    /* display: flex; */
+    padding: 0px 0px 4px 8px;
+    align-self: flex-end;
 }

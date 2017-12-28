@@ -14,7 +14,7 @@ import TestListItem from './TestListItem';
 // COMPONENT
 const TestList = ( {enthusiasmLevel}: Props ) => {
     return (
-        <div className="testlist__container">
+        <div className="test-list__container">
             {getListItems( enthusiasmLevel )}
         </div>
     );
