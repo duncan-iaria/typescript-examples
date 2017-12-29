@@ -12,12 +12,12 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 //   languageName: 'TypeScript',
 // };
 
-export function configureStore( initialState: any ) {
-    return createStore<any>(
+export function configureStore( initialState: {} ) {
+    return createStore<{}>(
         rootReducer,
         initialState,
         composeEnhancers()
-    )
+    );
 }
 
 // export const store = createStore<any>( 

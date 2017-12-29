@@ -1,4 +1,4 @@
-// import { StoreState } from '../../../types
+import { EnthusiasmState } from '../../../types';
 import { connect } from 'react-redux';
 
 // COMPONENTS
@@ -6,12 +6,12 @@ import TestList from './TestList';
 
 // PROPS
 export interface Props {
-    enthusiasmLevel?: number;
+    enthusiasm?: EnthusiasmState;
 }
 
-export function mapStateToProps( {enthusiasmLevel}: Props ) {
+export function mapStateToProps( { enthusiasm }: Props ) {
     return {
-        enthusiasmLevel,
+        enthusiasm,
     };
 }
 

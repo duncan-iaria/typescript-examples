@@ -1,8 +1,9 @@
 import * as React from 'react';
+import { EnthusiasmState } from '../../../types';
 
 // PROPS
 export interface Props {
-    enthusiasmLevel: number;
+    enthusiasm: EnthusiasmState;
 }
 
 // STYLE
@@ -12,10 +13,10 @@ import './TestList.style.css';
 import TestListItem from './TestListItem';
 
 // COMPONENT
-const TestList = ( {enthusiasmLevel}: Props ) => {
+const TestList = ( {enthusiasm}: Props ) => {
     return (
         <div className="test-list__container">
-            {getListItems( enthusiasmLevel )}
+            {getListItems( enthusiasm.enthusiasmLevel )}
         </div>
     );
 };

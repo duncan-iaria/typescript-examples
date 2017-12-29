@@ -1,8 +1,12 @@
 import { EnthusiasmAction } from '../actions';
-// import { StoreState } from '../types';
+import { EnthusiasmState } from '../types';
 import { INCREMENT_ENTHUSIASM, DECREMENT_ENTHUSIASM } from '../constants';
 
-export function enthusiasmReducer( state: any = { troll: 'yas', time:'yazzz!' }, action: EnthusiasmAction ): any {
+const initialState: EnthusiasmState = {
+    enthusiasmLevel: 1,
+};
+
+export function enthusiasmReducer( state: EnthusiasmState = initialState, action: EnthusiasmAction ): EnthusiasmState {
     switch  ( action.type ) {
         case INCREMENT_ENTHUSIASM:
             console.log( action.payload );

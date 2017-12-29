@@ -5,9 +5,9 @@ import { connect, Dispatch } from 'react-redux';
 // COMPONENTS
 import Test from './Test';
 
-export function mapStateToProps({ enthusiasmLevel, languageName }: StoreState) {
+export function mapStateToProps( { enthusiasm, languageName }: StoreState ) {
     return {
-        enthusiasmLevel,
+        enthusiasm,
         name: languageName,
     };
 }
