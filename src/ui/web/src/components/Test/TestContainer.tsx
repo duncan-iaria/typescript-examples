@@ -1,9 +1,12 @@
-import * as actions from '../../actions/';
+import { actions } from '../../actions/';
+import { EnthusiasmAction } from '../../actions/enthusiasmActions';
 import { StoreState } from '../../types/index';
 import { connect, Dispatch } from 'react-redux';
 
 // COMPONENTS
 import Test from './Test';
+
+const { enthusiasmActions } = actions;
 
 export function mapStateToProps( { enthusiasm, languageName }: StoreState ) {
     return {
@@ -12,10 +15,10 @@ export function mapStateToProps( { enthusiasm, languageName }: StoreState ) {
     };
 }
 
-export function mapDispatchToProps(dispatch: Dispatch<actions.EnthusiasmAction>) {
+export function mapDispatchToProps(dispatch: Dispatch<EnthusiasmAction>) {
         return {
-            onIncrement: () => dispatch(actions.incrementEnthusiasm()),
-            onDecrement: () => dispatch(actions.decrementEnthusiasm()),
+            onIncrement: () => dispatch(enthusiasmActions.incrementEnthusiasm()),
+            onDecrement: () => dispatch(enthusiasmActions.decrementEnthusiasm()),
         };
     }
 

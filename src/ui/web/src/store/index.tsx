@@ -7,11 +7,6 @@ declare const window: any;
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-// const initialState: StoreState = {
-//   enthusiasmLevel: 1,
-//   languageName: 'TypeScript',
-// };
-
 export function configureStore( initialState: {} ) {
     return createStore<{}>(
         rootReducer,
@@ -19,9 +14,3 @@ export function configureStore( initialState: {} ) {
         composeEnhancers()
     );
 }
-
-// export const store = createStore<any>( 
-//     rootReducer,
-//     initialState,
-//     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-// );

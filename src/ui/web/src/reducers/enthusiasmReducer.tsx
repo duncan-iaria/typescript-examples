@@ -1,4 +1,4 @@
-import { EnthusiasmAction } from '../actions';
+import { EnthusiasmAction } from '../actions/enthusiasmActions';
 import { EnthusiasmState } from '../types';
 import { INCREMENT_ENTHUSIASM, DECREMENT_ENTHUSIASM } from '../constants';
 

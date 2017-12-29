@@ -1,25 +1,9 @@
-import * as constants from '../constants';
+import * as enthusiasmActions from './enthusiasmActions';
+import * as userActions from './userActions';
 
-export interface IncrementEnthusiasm {
-    type: constants.INCREMENT_ENTHUSIASM;
-    payload: Object;
-}
+export const actions = {
+    enthusiasmActions,
+    userActions,
+};
 
-export interface DecrementEnthusiasm {
-    type: constants.DECREMENT_ENTHUSIASM;
-}
-
-export type EnthusiasmAction = IncrementEnthusiasm | DecrementEnthusiasm;
-
-export function incrementEnthusiasm(): IncrementEnthusiasm {
-    return {
-        type: constants.INCREMENT_ENTHUSIASM,
-        payload: { troll: 'yas' },
-    };
-}
-
-export function decrementEnthusiasm(): DecrementEnthusiasm {
-    return {
-        type: constants.DECREMENT_ENTHUSIASM
-    };
-}
+export default actions;
