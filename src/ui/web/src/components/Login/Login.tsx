@@ -7,8 +7,8 @@ const Login = () => {
             <input type="text"/>
             <input type="submit"/>
         </div>
-    )
-}
+    );
+};
 
 // EXPORT
 export default Login;
