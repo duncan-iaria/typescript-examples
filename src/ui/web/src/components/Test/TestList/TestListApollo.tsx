@@ -1,17 +1,9 @@
 import * as React from 'react';
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
-
-// PROPS
-export interface Props {
-    // enthusiasm: EnthusiasmState;
-}
+import { graphql, QueryProps } from 'react-apollo';
 
 // STYLE
 import './TestList.style.css';
-
-// COMPONENTS
-// import TestListItem from './TestListItem';
 
 const FOLK_QUERY = gql`
     query GetFolk {
@@ -21,35 +13,48 @@ const FOLK_QUERY = gql`
             lastName
             email
         }
+
+        UserList(length: 10) {
+            _id
+            firstName
+            lastName
+            email
+        }
     }
 `;
 
-type User = {
+export type User = {
     _id: string;
     firstName: string;
     lastName: string;
     email: string;
 };
 
+type UserList = User[];
+
 type Response = {
-    user: User;
+    User: User;
+    userList: UserList;
 };
 
+type WrappedProps = Response & QueryProps;
+
 // COMPONENT
-const TestListApollo = graphql<Response>( FOLK_QUERY );
+const TestListApollo = graphql<Response, {}, WrappedProps>( FOLK_QUERY, {
+    props: ({ data }) => ({ ...data }),
+});
 
-//     return (
-//         <div className="test-list__container">
-//             {getListItems( enthusiasm.enthusiasmLevel )}
-//         </div>
-//     );
-// };
-
-// HELPERS
-
-export default TestListApollo( ( { data } ) => {
-    console.log( data );
+export default TestListApollo( ( props ) => {
+    // console.log( loading );
     return(
-        <div>hello</div>
+        props.User ? (
+                console.log( props ),
+                <div>
+                    <h1>{`${ props.User.firstName } ${ props.User.lastName }`}</h1>
+                    <h2>{`${ props.User.email }`}</h2>
+                </div>
+            )
+        : // ELSE
+            <div>Loading</div>
     );
 } );
