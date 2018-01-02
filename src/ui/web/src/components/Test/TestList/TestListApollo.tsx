@@ -1,59 +1,59 @@
-import * as React from 'react';
-import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+// import * as React from 'react';
+// import gql from 'graphql-tag';
+// import { graphql } from 'react-apollo';
 
-// PROPS
-export interface Props {
-    // enthusiasm: EnthusiasmState;
-}
+// // PROPS
+// export interface Props {
+//     // enthusiasm: EnthusiasmState;
+// }
 
-// STYLE
-import './TestList.style.css';
+// // STYLE
+// import './TestList.style.css';
 
-// COMPONENTS
-import TestListItem from './TestListItem';
+// // COMPONENTS
+// // import TestListItem from './TestListItem';
 
-const FOLK_QUERY = gql`
-    query GetFolk {
-        User {
-            _id
-            firstName
-            lastName
-            email
-        }
-    }
-`;
+// const FOLK_QUERY = gql`
+//     query GetFolk {
+//         User {
+//             _id
+//             firstName
+//             lastName
+//             email
+//         }
+//     }
+// `;
 
-type User = {
-    _id: string;
-    firstName: string;
-    lastName: string;
-    email: string;
-}
+// type User = {
+//     _id: string;
+//     firstName: string;
+//     lastName: string;
+//     email: string;
+// }
 
-type Response = {
-    user: User;
-}
+// type Response = {
+//     user: User;
+// }
 
-// COMPONENT
-const TestListApollo = graphql<Response>( FOLK_QUERY, {
-    options: () => ({
+// // COMPONENT
+// const TestListApollo = graphql<Response>( FOLK_QUERY, {
+//     options: () => ({
 
-    })
-});
+//     })
+// });
 
-//     return (
-//         <div className="test-list__container">
-//             {getListItems( enthusiasm.enthusiasmLevel )}
-//         </div>
-//     );
-// };
+// //     return (
+// //         <div className="test-list__container">
+// //             {getListItems( enthusiasm.enthusiasmLevel )}
+// //         </div>
+// //     );
+// // };
 
-// HELPERS
+// // HELPERS
 
 
-export default TestListApollo( ( { data: { loading, user, error } }) => {
-    return(
-        <div>hello</div>
-    )
-} );
+// export default TestListApollo( ( { data: { loading, user, error } }) => {
+//     return(
+//         <div>hello</div>
+//     )
+// } );
