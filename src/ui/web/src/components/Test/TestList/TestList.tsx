@@ -16,9 +16,11 @@ import TestListItem from './TestListItem';
 // COMPONENT
 const TestList = ( {enthusiasm}: Props ) => {
     return (
-        <div className="test-list__container">
-            {getListItems( enthusiasm.enthusiasmLevel )}
+        <div style={{ padding: 10 }}>            
             <TestListApollo/>
+            <div className="test-list__container">
+                {getListItems( enthusiasm.enthusiasmLevel )}
+            </div>
         </div>
     );
 };
