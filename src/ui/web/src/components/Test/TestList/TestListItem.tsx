@@ -12,7 +12,7 @@ const TestListItem = ( { id, firstName, lastName }: Props ) => {
             <div className="test-list__item-header">
                 <div className="test-list__id">{id}</div>
                 <h1 className="test-list__title">
-                    { firstName && lastName ? `${ firstName } ${ lastName }` : `Test List Item` }
+                    {firstName && lastName ? `${ firstName } ${ lastName }` : `Test List Item`}
                 </h1>
             </div>
         </div>

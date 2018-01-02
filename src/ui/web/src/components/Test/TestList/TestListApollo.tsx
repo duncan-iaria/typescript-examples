@@ -2,7 +2,7 @@ import * as React from 'react';
 import gql from 'graphql-tag';
 import { graphql, QueryProps } from 'react-apollo';
 
-//COMPONENTS
+// COMPONENTS
 import TestListItem from './TestListItem';
 
 // STYLE
@@ -48,7 +48,6 @@ const TestListApollo = graphql<Response, {}, WrappedProps>( FOLK_QUERY, {
 });
 
 export default TestListApollo( ( props ) => {
-    // console.log( loading );
     return(
         props.User ? (
                 console.log( props ),
@@ -63,9 +62,9 @@ export default TestListApollo( ( props ) => {
                                         key={index + 1}
                                         id={index}
                                         firstName={tUser.firstName}
-                                        lastName={tUser.lastName}>
-                                    </TestListItem>
-                                )
+                                        lastName={tUser.lastName}
+                                    />
+                                );
                             })
                         }
                     </div>
