@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { EnthusiasmState } from '../../../types';
+import TestListApollo from './TestListApollo';
 
 // PROPS
 export interface Props {
@@ -17,6 +18,7 @@ const TestList = ( {enthusiasm}: Props ) => {
     return (
         <div className="test-list__container">
             {getListItems( enthusiasm.enthusiasmLevel )}
+            <TestListApollo/>
         </div>
     );
 };

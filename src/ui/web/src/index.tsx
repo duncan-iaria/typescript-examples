@@ -18,18 +18,18 @@ const client = new ApolloClient({
   //  `/graphql` endpoint on the same host
   // Pass the configuration option { uri: YOUR_GRAPHQL_API_URL } to the `HttpLink` to connect
   // to a different host
-  link: new HttpLink( { uri: `http://fake.graphql.guru/` } ),
+  link: new HttpLink( { uri: `http://fake.graphql.guru/graphql` } ),
   cache: new InMemoryCache()
 });
 
 const store = configureStore( {} );
 
 ReactDOM.render(
-    <Provider store={store}>
-      <ApolloProvider client={client}>
-        <App/>
-      </ApolloProvider>
-    </Provider>,
+  <Provider store={store}>
+    <ApolloProvider client={client}>
+      <App/>
+    </ApolloProvider>
+  </Provider>,
   document.getElementById('root') as HTMLElement
 );
 
