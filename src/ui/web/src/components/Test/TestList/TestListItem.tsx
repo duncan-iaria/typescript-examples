@@ -8,9 +8,14 @@ interface Props {
 }
 
 const TestListItem = ( { id, firstName, lastName, openUser }: Props ) => {
-    console.log( openUser );
+    
+    let tempOpenUser = openUser ?
+        () => { openUser( id ); }  
+        : // ELSE
+        () => { return null; };
+    
     return(
-        <div className="test-list__item" onClick={openUser ? openUser( id ) : null}>
+        <div className="test-list__item" onClick={tempOpenUser}>
             <div className="test-list__item-header">
                 <div className="test-list__id">{id}</div>
                 <h1 className="test-list__title">
