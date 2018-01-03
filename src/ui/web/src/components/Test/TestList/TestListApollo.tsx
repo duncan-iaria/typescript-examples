@@ -27,7 +27,7 @@ const FOLK_QUERY = gql`
     }
 `;
 
-export interface User {
+interface User {
     _id: string;
     firstName: string;
     lastName: string;

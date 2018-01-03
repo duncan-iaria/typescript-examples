@@ -22,6 +22,9 @@ const TestListItem = ( { id, firstName, lastName, openUser }: Props ) => {
                     {firstName && lastName ? `${ firstName } ${ lastName }` : `Test List Item`}
                 </h1>
             </div>
+            <div className="test-list__item-content">
+                Here is some content to view.
+            </div>
         </div>
     );
 };
