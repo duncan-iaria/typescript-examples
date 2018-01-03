@@ -43,6 +43,11 @@ interface Response {
 const TestListApollo = graphql<Response>(FOLK_QUERY);
 
 export default TestListApollo( ( props ) => {
+
+    const gotoUser = ( tId: number ) => {
+        console.log( `navigating to user ${ tId } route` );
+    };
+
     const user: User = get( props, 'data.User' );
     const userList: User[] = get(props, 'data.UserList');
     return(
@@ -59,6 +64,7 @@ export default TestListApollo( ( props ) => {
                                         id={index}
                                         firstName={tUser.firstName}
                                         lastName={tUser.lastName}
+                                        openUser={gotoUser}
                                     />
                                 );
                             })
