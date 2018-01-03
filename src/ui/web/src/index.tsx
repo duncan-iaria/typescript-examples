@@ -19,7 +19,9 @@ const client = new ApolloClient({
   // Pass the configuration option { uri: YOUR_GRAPHQL_API_URL } to the `HttpLink` to connect
   // to a different host
   link: new HttpLink( { uri: `http://fake.graphql.guru/graphql` } ),
-  cache: new InMemoryCache()
+  cache: new InMemoryCache({
+    dataIdFromObject: (object: any) => object.firstName
+  })
 });
 
 const store = configureStore( {} );

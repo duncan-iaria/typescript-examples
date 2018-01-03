@@ -1,6 +1,7 @@
 import * as React from 'react';
 import gql from 'graphql-tag';
-import { graphql, QueryProps } from 'react-apollo';
+import { graphql } from 'react-apollo';
+import { get } from 'lodash';
 
 // COMPONENTS
 import TestListItem from './TestListItem';
@@ -26,37 +27,32 @@ const FOLK_QUERY = gql`
     }
 `;
 
-export type User = {
+export interface User {
     _id: string;
     firstName: string;
     lastName: string;
     email: string;
-};
+}
 
-type UserList = User[];
-
-type Response = {
+interface Response {
     User: User;
-    UserList: UserList;
-};
-
-type WrappedProps = Response & QueryProps;
+    UserList: User[];
+}
 
 // COMPONENT
-const TestListApollo = graphql<Response, {}, WrappedProps>( FOLK_QUERY, {
-    props: ({ data }) => ({ ...data }),
-});
+const TestListApollo = graphql<Response>(FOLK_QUERY);
 
 export default TestListApollo( ( props ) => {
+    const user: User = get( props, 'data.User' );
+    const userList: User[] = get(props, 'data.UserList');
     return(
-        props.User ? (
-                console.log( props ),
+        user ? (
                 <div>
-                    <h1>{`${ props.User.firstName } ${ props.User.lastName }`}</h1>
-                    <h2>{`${ props.User.email }`}</h2>
+                    <h1>{`${ user.firstName } ${ user.lastName }`}</h1>
+                    <h2>{`${ user.email }`}</h2>
                     <div className="test-list__container">
                         {
-                            props.UserList.map( ( tUser, index )  => {
+                            userList.map( ( tUser, index )  => {
                                 return (
                                     <TestListItem 
                                         key={index + 1}
