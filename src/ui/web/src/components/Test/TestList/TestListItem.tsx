@@ -1,10 +1,14 @@
 import * as React from 'react';
 
+interface OpenUser {
+    ( id: number ): void;
+}
+
 interface Props {
     id: number;
     firstName?: string;
     lastName?: string;
-    openUser?: Function;
+    openUser?: OpenUser;
 }
 
 const TestListItem = ( { id, firstName, lastName, openUser }: Props ) => {
